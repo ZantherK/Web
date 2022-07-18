@@ -1,0 +1,68 @@
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 300px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    margin: 30px;
+    float: left;
+  }
+  
+  /* This container is needed to position the front and back side */
+  /* https://www.superaki.mx/collections/abarrotes-aki/products/184177-2-media-crema-lala-tetra */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 16px;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-image:
+      linear-gradient(
+        45deg, #6f04d9, #d9048e
+      );
+  }
+  
+  /* Style the back side */
+  .flip-card-front img {
+    width: 270px;
+    margin-top: 1rem;
+  }
+  .flip-card-back{
+    background-image:
+      linear-gradient(
+        315deg, #6f04d9, #8a045c
+      );
+    color: #ffffff;
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-back img{
+    width: 180px;
+    margin-top: 1rem;
+  }
+  .flip-card-back h3{
+    margin-bottom: 0.3;
+  }
+  .flip-card-back h1{
+    margin: 0;
+  }
